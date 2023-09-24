@@ -94,18 +94,18 @@ class DialogTurn:
         #             cur_list[:] = []
         #         i += 1
         self.u1, self.u2, self.u3 = item[0], item[1], item[2]
-        for l in [self.u1, self.u2, self.u3]:
-            for i in range(len(l)):
-                if l[i] == '<s>':
-                    l[i] = 0
-                elif l[i] == '</s>':
-                    l[i] = 1
-                elif l[i] == '<person>':
-                    l[i] = 2
-                elif l[i] == '<number>':
-                    l[i] = 3
-                elif l[i] == '<unk>':
-                    l[i] = 4
+        # for l in [self.u1, self.u2, self.u3]:
+        #     for i in range(len(l)):
+        #         if l[i] == '<s>':
+        #             l[i] = 0
+        #         elif l[i] == '</s>':
+        #             l[i] = 1
+        #         elif l[i] == '<person>':
+        #             l[i] = 2
+        #         elif l[i] == '<number>':
+        #             l[i] = 3
+        #         elif l[i] == '<unk>':
+        #             l[i] = 4
 
     def __len__(self):
         return len(self.u1) + len(self.u2) + len(self.u3)
