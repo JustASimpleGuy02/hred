@@ -6,6 +6,7 @@ from torch.autograd import Variable
 from tqdm import tqdm
 import numpy as np
 import json
+import os
 
 use_cuda = torch.cuda.is_available()
 
@@ -129,7 +130,7 @@ class MovieTriples(Dataset):
         #     for d in data:
         #         self.utterance_data.append(DialogTurn(d))
                 
-        with open('/home/skaz/Desktop/hred/data/triples.json', 'r') as f:
+        with open(os.path.abspath(os.path.join(__file__, '../data/triples.json')), 'r') as f:
             data = json.load(f)
             if data_type == 'train':
                 data = data["train"]
